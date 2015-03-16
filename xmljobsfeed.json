@@ -1,0 +1,93 @@
+[
+    {
+    "nameid": "cawr",
+    "type": "location",
+    "namestring": "Centre for Agroecology, Water and Resilience",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "cabes",
+    "type": "location",
+    "namestring": "Centre for Applied Biological and Exercise Sciences",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "cba",
+    "type": "location",
+    "namestring": "Centre for Business in Society",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "ccsj",
+    "type": "location",
+    "namestring": "Centre for Communities and Social Justice",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "clib",
+    "type": "location",
+    "namestring": "Centre for Low Impact Buildings",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "crpba",
+    "type": "location",
+    "namestring": "Centre for Research in Psychology, Behaviour and Achievement",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "cteh",
+    "type": "location",
+    "namestring": "Centre for Technology Enabled Health",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "ctpsr",
+    "type": "location",
+    "namestring": "Centre for Trust, Peace and Social Relations",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "iame",
+    "type": "location",
+    "namestring": "Institute for Advanced Manufacturing and Engineering",
+    "array": [],
+    "table": ""
+    }
+    {
+    "nameid": "cdare",
+    "type": "location",
+    "namestring": "Centre for Dance Research",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "research",
+    "type": "category",
+    "namestring": "Research",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "ressup",
+    "type": "category",
+    "namestring": "Research Support",
+    "array": [],
+    "table": ""
+    },
+    {
+    "nameid": "addres",
+    "type": "category",
+    "namestring": "Additional Research",
+    "array": [],
+    "table": ""
+    }
+]
