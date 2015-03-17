@@ -1,5 +1,7 @@
 //Jude Gibbons, Coventry University, 2015
 
+//import the xml when the DOM content is loaded
+//cross-browser code for <IE9 from http://javascript.info/tutorial/onload-ondomcontentloaded
 if (window.addEventListener) {
 	window.addEventListener('DOMContentLoaded', loadxml, false);
 } else if (window.attachEvent) {
@@ -16,9 +18,8 @@ if (window.addEventListener) {
 		tryScroll()
 	}
 };
-//IE code from http://javascript.info/tutorial/onload-ondomcontentloaded
 
-//bring in xml
+//import xml and when it's loaded, run the display function
 function loadxml() {
 	var feedurl = "https://staffrecruitment.coventry.ac.uk/RSS/UniversityVacancies.xml";
 	var feedlimit = 150; // NUMBER OF JOBS TO DISPLAY IN FEED
@@ -30,8 +31,7 @@ function loadxml() {
 
 //only loads when feed download complete; then only displays feed when page loads
 displayWhenFeedLoaded = function(result) {
-	var jobsfeedmoduleFirst = new jobsfeedmodule.First();
-	google.setOnLoadCallback(jobsfeedmoduleFirst.displayfeed(result));
-	//set error or loading message here
+	var jobsFeedModuleObjects = new jobsFeedModule.Objects();
+	google.setOnLoadCallback(jobsFeedModuleObjects.displayfeed(result));
+	//set error or loading message here?
 };
-//change jobsfeedmodule.First to something better
