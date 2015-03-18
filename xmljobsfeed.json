@@ -1,67 +1,67 @@
 [
     {
-    "datatype": "location",
-    "nameid": "cawr",
-    "namestring": "Centre for Agroecology, Water and Resilience"
+    "dataType": "location",
+    "nameId": "cawr",
+    "nameString": "Centre for Agroecology, Water and Resilience"
     },
     {
-    "datatype": "location",
-    "nameid": "cabes",
-    "namestring": "Centre for Applied Biological and Exercise Sciences"
+    "dataType": "location",
+    "nameId": "cabes",
+    "nameString": "Centre for Applied Biological and Exercise Sciences"
     },
     {
-    "datatype": "location",
-    "nameid": "cba",
-    "namestring": "Centre for Business in Society"
+    "dataType": "location",
+    "nameId": "cba",
+    "nameString": "Centre for Business in Society"
     },
     {
-    "datatype": "location",
-    "nameid": "ccsj",
-    "namestring": "Centre for Communities and Social Justice"
+    "dataType": "location",
+    "nameId": "ccsj",
+    "nameString": "Centre for Communities and Social Justice"
     },
     {
-    "datatype": "location",
-    "nameid": "clib",
-    "namestring": "Centre for Low Impact Buildings"
+    "dataType": "location",
+    "nameId": "clib",
+    "nameString": "Centre for Low Impact Buildings"
     },
     {
-    "datatype": "location",
-    "nameid": "crpba",
-    "namestring": "Centre for Research in Psychology, Behaviour and Achievement"
+    "dataType": "location",
+    "nameId": "crpba",
+    "nameString": "Centre for Research in Psychology, Behaviour and Achievement"
     },
     {
-    "datatype": "location",
-    "nameid": "cteh",
-    "namestring": "Centre for Technology Enabled Health"
+    "dataType": "location",
+    "nameId": "cteh",
+    "nameString": "Centre for Technology Enabled Health"
     },
     {
-    "datatype": "location",
-    "nameid": "ctpsr",
-    "namestring": "Centre for Trust, Peace and Social Relations"
+    "dataType": "location",
+    "nameId": "ctpsr",
+    "nameString": "Centre for Trust, Peace and Social Relations"
     },
     {
-    "datatype": "location",
-    "nameid": "iame",
-    "namestring": "Institute for Advanced Manufacturing and Engineering"
+    "dataType": "location",
+    "nameId": "iame",
+    "nameString": "Institute for Advanced Manufacturing and Engineering"
     },
     {
-    "datatype": "location",
-    "nameid": "cdare",
-    "namestring": "Centre for Dance Research"
+    "dataType": "location",
+    "nameId": "cdare",
+    "nameString": "Centre for Dance Research"
     },
     {
-    "datatype": "category",
-    "nameid": "research",
-    "namestring": "Research"
+    "dataType": "category",
+    "nameId": "research",
+    "nameString": "Research"
     },
     {
-    "datatype": "category",
-    "nameid": "support",
-    "namestring": "Research Support"
+    "dataType": "category",
+    "nameId": "support",
+    "nameString": "Research Support"
     },
     {
-    "datatype": "category",
-    "nameid": "additional",
-    "namestring": "Additional Research"
+    "dataType": "category",
+    "nameId": "additional",
+    "nameString": "Additional Research"
     }
 ]

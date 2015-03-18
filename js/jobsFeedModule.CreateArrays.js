@@ -3,111 +3,63 @@ var jobsFeedModule = jobsFeedModule || {};
 jobsFeedModule.CreateArrays = function () {
 
 	this.parsejson = function(jsondata) {
-		console.log(jsondata);
+		//console.log(jsondata[0].nameString);
 	};
 
 	this.parsefeed = function(newItemObjectsArray) {
 
 	var itemArray = [],
 		itemsArray = [],
-		frcArray = [],
-		frcsListArray = [],
-		frcTable = "",
-		catArray = [],
-		catsListArray = [],
-		catTable = "";
-
-	//set up the Faculty Research Centre object
-	function frcObject(nameid,namestring,frcArray,frcTable) {
-		this.nameid = nameid;
-		this.namestring = namestring;
-		this.frcArray = frcArray;
-		this.frcTable = frcTable;
-
-		frcsListArray.push(this);
-	};
-	
-	//set up the categories object [for different categories to research, ie research support]
-	function catObject(nameid,namestring,catArray,catTable) {
-		this.nameid = nameid;
-		this.namestring = namestring;
-		this.catArray = catArray;
-		this.catTable = catTable;
-
-		catsListArray.push(this);
-	};
+		dataListArray = [];
+		dataArray = [];
+		dataTable = "";
 
 	//set up FRC/categories object from json
-	function dataObject(datatype,nameid,namestring,dataarray,datatable) {
-		this.datatype = datatype;
-		this.nameid = nameid;
-		this.namestring = namestring;
-		this.dataarray = dataarray;
-		this.datatable = datatable;
+	function dataObject(dataType,nameId,nameString,dataarray,datatable) {
+		this.dataType = dataType;
+		this.nameId = nameId;
+		this.nameString = nameString;
+		this.dataArray = dataarray;
+		this.dataTable = datatable;
 
 		dataListArray.push(this);
 	};
 
 
+	var cawr  = new dataObject("location", "cawr", "Centre for Agroecology, Water and Resilience", [], "");
+	var cabes = new dataObject("location", "cabes", "Centre for Applied Biological and Exercise Sciences", [], "");
+	var cbs   = new dataObject("location", "cbs", "Centre for Business in Society", [], "");
+	var ccsj  = new dataObject("location", "ccsj", "Centre for Communities and Social Justice", [], "");
+	//var cdare  = new dataObject("location", "cdare", "Centre for Dance Research", [], "");
+	var clib  = new dataObject("location", "clib", "Centre for Low Impact Buildings", [], "");
+	//var cmme  = new dataObject("location", "cmme", "Centre for Manufacturing and Materials Engineering", [], "");
+	var cpba  = new dataObject("location", "crpba", "Centre for Research in Psychology, Behaviour and Achievement", [], "");
+	var cteh  = new dataObject("location", "cteh", "Centre for Technology Enabled Health", [], "");
+	var ctpsr = new dataObject("location", "ctpsr", "Centre for Trust, Peace and Social Relations", [], "");
+	var iame  = new dataObject("location", "iame", "Institute for Advanced Manufacturing and Engineering", [], "");
+	var research = new dataObject("category", "research", "Research", [], "");
+	var support = new dataObject("category", "support", "Research Support", [], "");
+	var additional = new dataObject("category", "additional", "Additional Research", [], "");
 
-	//var namestring = new dataObject("datatype",nameid","namestring",[],"");
-
-	//REMOVE TO EXTERNAL JSON FILE
-	//NOTE THAT DIVS IN HTML FILE MUST MATCH THE NAMEID!!!!!!!!
-
-	//list out FRCs
-	var cawr  = new frcObject("cawr",  "Centre for Agroecology, Water and Resilience", [], "");
-	var cabes = new frcObject("cabes", "Centre for Applied Biological and Exercise Sciences", [], "");
-	var cbs   = new frcObject("cbs",   "Centre for Business in Society", [], "");
-	var ccsj  = new frcObject("ccsj",  "Centre for Communities and Social Justice", [], "");
-	//var cdare  = new frcObject("cdare",  "Centre for Dance Research", [], "");
-	var clib  = new frcObject("clib",  "Centre for Low Impact Buildings", [], "");
-	//var cmme  = new frcObject("cmme",  "Centre for Manufacturing and Materials Engineering", [], "");
-	var cpba  = new frcObject("crpba",  "Centre for Research in Psychology, Behaviour and Achievement", [], "");
-	var cteh  = new frcObject("cteh",  "Centre for Technology Enabled Health", [], "");
-	var ctpsr = new frcObject("ctpsr", "Centre for Trust, Peace and Social Relations", [], "");
-	var iame  = new frcObject("iame",  "Institute for Advanced Manufacturing and Engineering", [], "");
-	
-	//list out additional categories eg research support
-	var support = new catObject("support", "Research Support", [], "");
-	var additional = new catObject("additional", "Additional Research", [], "");
-	
-	//REMOVE INTO EXTERNAL JSON FILE//
-
-
-	//request.open(method, url, true);
-	//request.send(url);
-	//var accomData = JSON.parse(request.responseText);
-
-	//var json = '{"result":true,"count":1}',
-    //obj = JSON.parse(json);
-	//alert(obj.count);
-
-
-	//for each item in feed, make object and match to certain frc names
 	for (var i=0, maxi=newItemObjectsArray.length; i<maxi; i++) {
-						
-			if (newItemObjectsArray[i].category == ("Research")||newItemObjectsArray[i].category == ("Research Support")) { //add "Additional Research" if needed
-				for (var l=0, maxl=frcsListArray.length; l<maxl; l++) {
-					if (newItemObjectsArray[i].location == frcsListArray[l].namestring) {
-						frcsListArray[l].frcArray.push(newItemObjectsArray[i]);
-						frcsListArray[l].frcArray = frcsListArray[l].frcArray.sort(jobsFeedModule.Format.sortOnTitle);
-						
-						if (newItemObjectsArray[i].category == ("Additional Research")) {
-							for (var m=0, maxm=catsListArray.length; m<maxm; m++) {
-								if (newItemObjectsArray[i].category == catsListArray[m].namestring) {
-								catsListArray[m].catArray.push(newItemObjectsArray[i]);
-								catsListArray[m].catArray = catsListArray[m].catArray.sort(jobsFeedModule.Format.sortOnTitle);
+		for (var j=0, maxj=dataListArray.length; j<maxj; j++) {
+			if (newItemObjectsArray[i].category == ("Research")||newItemObjectsArray[i].category == ("Research Support")) {
+				if ((dataListArray[j].dataType == ("location"))&&(newItemObjectsArray[i].location == dataListArray[j].nameString)) {
+					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
+				}
+			} else if (newItemObjectsArray[i].category == ("Additional Research")) {
+					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
+			} else if (newItemObjectsArray[i].category == ("Research Support")) {
+				if ((dataListArray[j].dataType == ("category"))&&(newItemObjectsArray[i].category == dataListArray[j].nameString)) {
+					console.log("additional");
+					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
+				}
+			}
+			dataListArray[j].dataArray = dataListArray[j].dataArray.sort(jobsFeedModule.Format.sortOnTitle);
+		}
+	};
 
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-
-		var jobsFeedModuleDisplay = new jobsFeedModule.Display();
-		jobsFeedModuleDisplay.displaytables(newItemObjectsArray,catsListArray,catArray,frcsListArray,frcArray);
+	var jobsFeedModuleDisplay = new jobsFeedModule.Display();
+	jobsFeedModuleDisplay.displaytables(newItemObjectsArray,dataListArray,dataArray);
 	};
 };
