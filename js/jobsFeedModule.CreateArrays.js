@@ -2,6 +2,10 @@ var jobsFeedModule = jobsFeedModule || {};
 
 jobsFeedModule.CreateArrays = function () {
 
+	this.parsejson = function(jsondata) {
+		console.log(jsondata);
+	};
+
 	this.parsefeed = function(newItemObjectsArray) {
 
 	var itemArray = [],
@@ -33,6 +37,20 @@ jobsFeedModule.CreateArrays = function () {
 		catsListArray.push(this);
 	};
 
+	//set up FRC/categories object from json
+	function dataObject(datatype,nameid,namestring,dataarray,datatable) {
+		this.datatype = datatype;
+		this.nameid = nameid;
+		this.namestring = namestring;
+		this.dataarray = dataarray;
+		this.datatable = datatable;
+
+		dataListArray.push(this);
+	};
+
+
+
+	//var namestring = new dataObject("datatype",nameid","namestring",[],"");
 
 	//REMOVE TO EXTERNAL JSON FILE
 	//NOTE THAT DIVS IN HTML FILE MUST MATCH THE NAMEID!!!!!!!!
@@ -55,6 +73,15 @@ jobsFeedModule.CreateArrays = function () {
 	var additional = new catObject("additional", "Additional Research", [], "");
 	
 	//REMOVE INTO EXTERNAL JSON FILE//
+
+
+	//request.open(method, url, true);
+	//request.send(url);
+	//var accomData = JSON.parse(request.responseText);
+
+	//var json = '{"result":true,"count":1}',
+    //obj = JSON.parse(json);
+	//alert(obj.count);
 
 
 	//for each item in feed, make object and match to certain frc names

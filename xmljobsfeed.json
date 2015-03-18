@@ -1,93 +1,67 @@
 [
     {
+    "datatype": "location",
     "nameid": "cawr",
-    "type": "location",
-    "namestring": "Centre for Agroecology, Water and Resilience",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Agroecology, Water and Resilience"
     },
     {
+    "datatype": "location",
     "nameid": "cabes",
-    "type": "location",
-    "namestring": "Centre for Applied Biological and Exercise Sciences",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Applied Biological and Exercise Sciences"
     },
     {
+    "datatype": "location",
     "nameid": "cba",
-    "type": "location",
-    "namestring": "Centre for Business in Society",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Business in Society"
     },
     {
+    "datatype": "location",
     "nameid": "ccsj",
-    "type": "location",
-    "namestring": "Centre for Communities and Social Justice",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Communities and Social Justice"
     },
     {
+    "datatype": "location",
     "nameid": "clib",
-    "type": "location",
-    "namestring": "Centre for Low Impact Buildings",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Low Impact Buildings"
     },
     {
+    "datatype": "location",
     "nameid": "crpba",
-    "type": "location",
-    "namestring": "Centre for Research in Psychology, Behaviour and Achievement",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Research in Psychology, Behaviour and Achievement"
     },
     {
+    "datatype": "location",
     "nameid": "cteh",
-    "type": "location",
-    "namestring": "Centre for Technology Enabled Health",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Technology Enabled Health"
     },
     {
+    "datatype": "location",
     "nameid": "ctpsr",
-    "type": "location",
-    "namestring": "Centre for Trust, Peace and Social Relations",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Trust, Peace and Social Relations"
     },
     {
+    "datatype": "location",
     "nameid": "iame",
-    "type": "location",
-    "namestring": "Institute for Advanced Manufacturing and Engineering",
-    "array": [],
-    "table": ""
-    }
+    "namestring": "Institute for Advanced Manufacturing and Engineering"
+    },
     {
+    "datatype": "location",
     "nameid": "cdare",
-    "type": "location",
-    "namestring": "Centre for Dance Research",
-    "array": [],
-    "table": ""
+    "namestring": "Centre for Dance Research"
     },
     {
+    "datatype": "category",
     "nameid": "research",
-    "type": "category",
-    "namestring": "Research",
-    "array": [],
-    "table": ""
+    "namestring": "Research"
     },
     {
-    "nameid": "ressup",
-    "type": "category",
-    "namestring": "Research Support",
-    "array": [],
-    "table": ""
+    "datatype": "category",
+    "nameid": "support",
+    "namestring": "Research Support"
     },
     {
-    "nameid": "addres",
-    "type": "category",
-    "namestring": "Additional Research",
-    "array": [],
-    "table": ""
+    "datatype": "category",
+    "nameid": "additional",
+    "namestring": "Additional Research"
     }
 ]
