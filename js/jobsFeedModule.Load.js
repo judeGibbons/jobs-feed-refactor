@@ -1,7 +1,10 @@
 //Jude Gibbons, Coventry University, 2015
 
+var jobsFeedModule = jobsFeedModule || {}; 
+
 //run code when DOM content is loaded
 //cross-browser code for <IE9 from http://javascript.info/tutorial/onload-ondomcontentloaded
+
 if (window.addEventListener) {
 	window.addEventListener('DOMContentLoaded', init, false);
 } else if (window.attachEvent) {
@@ -21,12 +24,12 @@ if (window.addEventListener) {
 
 function init(jsonurl) {
 	var jsonurl = "./xmljobsfeed.json";
-	loadjson("GET", jsonurl, passJsonThrough);
+	loadjson("GET", jsonurl);
 	loadxml();
 };
 
 //import the json file
-var loadjson = function(method, url, callback) {
+var loadjson = function(method, url) {
 
 	var jsonfile;
 
@@ -41,8 +44,7 @@ var loadjson = function(method, url, callback) {
 
 	jsonfile.onreadystatechange = function() {
    		if (jsonfile.readyState == 4 && jsonfile.status == 200) {
-    		var jsondata = JSON.parse(jsonfile.responseText);
-    		passJsonThrough(jsondata); 
+    		jobsFeedModule.jsondata = JSON.parse(jsonfile.responseText);
    		};
 	};
 };
@@ -63,9 +65,4 @@ displayWhenFeedLoaded = function(result) {
 	var jobsFeedModuleObjects = new jobsFeedModule.Objects();
 	google.setOnLoadCallback(jobsFeedModuleObjects.displayfeed(result));
 	//set error or loading message here?
-};
-
-passJsonThrough = function(jsondata) {
-	var jobsFeedModuleCreateArrays = new jobsFeedModule.CreateArrays();
-	jobsFeedModuleCreateArrays.parsejson(jsondata);
 };
