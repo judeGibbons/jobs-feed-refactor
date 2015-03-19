@@ -31,20 +31,20 @@ function init(jsonurl) {
 //import the json file
 var loadjson = function(method, url) {
 
-	var jsonfile;
+	var jsonFile;
 
 	if (window.XMLHttpRequest) {
-		jsonfile = new XMLHttpRequest;
+		jsonFile = new XMLHttpRequest;
 	} else {
-		jsonfile = new ActiveXObject('Msxml2.XMLHTTP');
+		jsonFile = new ActiveXObject('Msxml2.XMLHTTP');
 	};
 
-	jsonfile.open(method, url, true);
-	jsonfile.send(url);
+	jsonFile.open(method, url, true);
+	jsonFile.send(url);
 
-	jsonfile.onreadystatechange = function() {
-   		if (jsonfile.readyState == 4 && jsonfile.status == 200) {
-    		jobsFeedModule.jsondata = JSON.parse(jsonfile.responseText);
+	jsonFile.onreadystatechange = function() {
+   		if (jsonFile.readyState == 4 && jsonFile.status == 200) {
+    		jobsFeedModule.jsonData = JSON.parse(jsonFile.responseText);
    		};
 	};
 };
@@ -64,5 +64,5 @@ function loadxml() {
 displayWhenFeedLoaded = function(result) {
 	var jobsFeedModuleObjects = new jobsFeedModule.Objects();
 	google.setOnLoadCallback(jobsFeedModuleObjects.displayfeed(result));
-	//set error or loading message here?
+	//set error or loading message here
 };

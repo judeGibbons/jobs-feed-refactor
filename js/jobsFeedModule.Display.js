@@ -2,40 +2,39 @@ var jobsFeedModule = jobsFeedModule || {};
 
 jobsFeedModule.Display = function () {
 
-	this.displaytables = function(newItemObjectsArray,dataListArray,dataArray) { 
+	this.displaytables = function(newXmlObjectsArray,jsonObject) { 
 
 		//push the sorted variables from the data arrays into html tables
-		for (var i=0, maxi=dataListArray.length; i<maxi; i++) {
+		for (var i=0, maxi=jsonObject.length; i<maxi; i++) {
 			var displayLocation = "";
-			if (document.getElementById(dataListArray[i].nameId)) {
-				var divOnPage = document.getElementById(dataListArray[i].nameId);
+			if (document.getElementById(jsonObject[i].nameId)) {
+				var divOnPage = document.getElementById(jsonObject[i].nameId);
 			} else { 
 				continue;
 			};
-			//console.log(dataListArray[i]);
 
 			var dataOutput = "";
-			for (var j=0, maxj=dataListArray[i].dataArray.length; j<maxj; j++) {
-				if (dataListArray[i].dataType == "category") {
-					displayLocation = dataListArray[i].dataArray[j].location + "<br \/>";
+			for (var j=0, maxj=jsonObject[i].dataArray.length; j<maxj; j++) {
+				if (jsonObject[i].dataType == "category") {
+					displayLocation = jsonObject[i].dataArray[j].location + "<br \/>";
 				} else {
 					displayLocation = "";
 				};
 				dataOutput+="<tr><td><span class='title'><a href='" 
-				+ dataListArray[i].dataArray[j].link + "' target='_blank'>" 
-				+ dataListArray[i].dataArray[j].title + "<\/a><\/span><br \/>" 
+				+ jsonObject[i].dataArray[j].link + "' target='_blank'>" 
+				+ jsonObject[i].dataArray[j].title + "<\/a><\/span><br \/>" 
 				+ displayLocation 
 				+ "<span class='strong'>Reference:<\/span> " 
-				+ dataListArray[i].dataArray[j].reference +"<\/td><td>" 
-				+ dataListArray[i].dataArray[j].salary +"<\/td><td>" 
-				+ dataListArray[i].dataArray[j].closingdate +"<\/td><\/tr>"
+				+ jsonObject[i].dataArray[j].reference +"<\/td><td>" 
+				+ jsonObject[i].dataArray[j].salary +"<\/td><td>" 
+				+ jsonObject[i].dataArray[j].closingdate +"<\/td><\/tr>"
 			};
 			if (dataOutput === "") {
-				dataListArray[i].dataTable+="<p class='standalonepara nojobs'>There are currently no jobs available.<\/p>";
+				jsonObject[i].dataTable+="<p class='standalonepara nojobs'>There are currently no jobs available.<\/p>";
 			} else {
-				dataListArray[i].dataTable+="<table><thead><tr><th>Job title<\/th><th>Salary<\/th><th>Closing date<\/th><\/tr><\/thead><tbody>" + dataOutput + "<\/tbody><\/table>";
+				jsonObject[i].dataTable+="<table><thead><tr><th>Job title<\/th><th>Salary<\/th><th>Closing date<\/th><\/tr><\/thead><tbody>" + dataOutput + "<\/tbody><\/table>";
 			};
-			divOnPage.innerHTML=dataListArray[i].dataTable;
+			divOnPage.innerHTML=jsonObject[i].dataTable;
 		};
 	};
 };

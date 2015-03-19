@@ -1,6 +1,11 @@
 [
     {
     "dataType": "location",
+    "nameId": "ctm",
+    "nameString": "Centre for Transportation and Mobility"
+    },
+    {
+    "dataType": "location",
     "nameId": "cawr",
     "nameString": "Centre for Agroecology, Water and Resilience"
     },
@@ -11,7 +16,7 @@
     },
     {
     "dataType": "location",
-    "nameId": "cba",
+    "nameId": "cbis",
     "nameString": "Centre for Business in Society"
     },
     {

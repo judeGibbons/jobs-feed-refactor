@@ -4,13 +4,13 @@ jobsFeedModule.Objects = function () {
 
 	this.displayfeed = function(result) {
 
-		var newItemObjectsArray = [];
+		var newXmlObjectsArray = [];
 
 		if (!result.error) {
 		    var items = result.xmlDocument.getElementsByTagName('item');
 
 			//set up objects based on xml items
-			function itemObject(title,link,location,reference,category,salary,minsalary,closingdate,description) {
+			function xmlObject(title,link,location,reference,category,salary,minsalary,closingdate,description) {
 				this.title = title;
 				this.link = link;
 				this.location = location;
@@ -76,8 +76,8 @@ jobsFeedModule.Objects = function () {
 				minsalary = checkElementChildren(minsalaryElement),
 				category = checkElementChildren(categoryElement);
 
-				var newItemObject = new itemObject(title,link,location,reference,category,salary,minsalary,closingdate,description);
-				newItemObjectsArray.push(newItemObject);
+				var newXmlObject = new xmlObject(title,link,location,reference,category,salary,minsalary,closingdate,description);
+				newXmlObjectsArray.push(newXmlObject);
 
 			};
 
@@ -86,7 +86,7 @@ jobsFeedModule.Objects = function () {
 		};
 
 		var jobsFeedModuleFormat = new jobsFeedModule.Format();
-		jobsFeedModuleFormat.formatfeed(newItemObject,newItemObjectsArray);
+		jobsFeedModuleFormat.formatfeed(newXmlObject,newXmlObjectsArray);
 
 	};
 };
