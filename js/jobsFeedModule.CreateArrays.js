@@ -43,23 +43,24 @@ jobsFeedModule.CreateArrays = function () {
 
 	for (var i=0, maxi=newItemObjectsArray.length; i<maxi; i++) {
 		for (var j=0, maxj=dataListArray.length; j<maxj; j++) {
-			if (newItemObjectsArray[i].category == ("Research")||newItemObjectsArray[i].category == ("Research Support")) {
+			if (newItemObjectsArray[i].category == ("Research")) {
 				if ((dataListArray[j].dataType == ("location"))&&(newItemObjectsArray[i].location == dataListArray[j].nameString)) {
 					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
-				}
-			} else if (newItemObjectsArray[i].category == ("Additional Research")) {
+					}
+				} else if ((newItemObjectsArray[i].category == ("Additional Research"))&&(dataListArray[j] == additional)) {
 					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
-			} else if (newItemObjectsArray[i].category == ("Research Support")) {
-				if ((dataListArray[j].dataType == ("category"))&&(newItemObjectsArray[i].category == dataListArray[j].nameString)) {
-					console.log("additional");
-					dataListArray[j].dataArray.push(newItemObjectsArray[i]);
+				} else if (newItemObjectsArray[i].category == ("Research Support")) {
+					if ((dataListArray[j].dataType == ("location"))&&(newItemObjectsArray[i].location == dataListArray[j].nameString)) {
+						dataListArray[j].dataArray.push(newItemObjectsArray[i]);
+					} else {
+						support.dataArray.push(newItemObjectsArray[i]);
+						break;
+					}
 				}
-			}
-			dataListArray[j].dataArray = dataListArray[j].dataArray.sort(jobsFeedModule.Format.sortOnTitle);
-		}
-	};
-
-	var jobsFeedModuleDisplay = new jobsFeedModule.Display();
-	jobsFeedModuleDisplay.displaytables(newItemObjectsArray,dataListArray,dataArray);
-	};
-};
+				dataListArray[j].dataArray = dataListArray[j].dataArray.sort(jobsFeedModule.Format.sortOnTitle);
+			} //end of inner loop				
+		}; //end of outer loop
+		var jobsFeedModuleDisplay = new jobsFeedModule.Display();
+		jobsFeedModuleDisplay.displaytables(newItemObjectsArray,dataListArray,dataArray);
+	}; //end of parsefeed
+}; //end of page

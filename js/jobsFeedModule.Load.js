@@ -49,7 +49,8 @@ var loadjson = function(method, url, callback) {
 
 //import xml and when it's loaded, run the display function
 function loadxml() {
-	var feedurl = "https://staffrecruitment.coventry.ac.uk/RSS/UniversityVacancies.xml";
+	//var feedurl = "https://staffrecruitment.coventry.ac.uk/RSS/UniversityVacancies.xml";
+	var feedurl = "http://www.cutours.co.uk/staffrecruitment/testrssfeed.xml";
 	var feedlimit = 150; // NUMBER OF JOBS TO DISPLAY IN FEED
 	var jobsfeed = new google.feeds.Feed(feedurl+"?t="+new Date().getTime());
 	jobsfeed.setResultFormat(google.feeds.Feed.XML_FORMAT);

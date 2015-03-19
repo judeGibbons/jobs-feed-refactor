@@ -10,15 +10,17 @@ jobsFeedModule.Display = function () {
 			if (document.getElementById(dataListArray[i].nameId)) {
 				var divOnPage = document.getElementById(dataListArray[i].nameId);
 			} else { 
-				break;
+				continue;
 			};
-			if (dataListArray[i].dataType == "category") {
-				displayLocation = dataListArray[i].dataArray[j].location + "<br \/>";
-			} else {
-				displayLocation = "";
-			};
+			//console.log(dataListArray[i]);
+
 			var dataOutput = "";
 			for (var j=0, maxj=dataListArray[i].dataArray.length; j<maxj; j++) {
+				if (dataListArray[i].dataType == "category") {
+					displayLocation = dataListArray[i].dataArray[j].location + "<br \/>";
+				} else {
+					displayLocation = "";
+				};
 				dataOutput+="<tr><td><span class='title'><a href='" 
 				+ dataListArray[i].dataArray[j].link + "' target='_blank'>" 
 				+ dataListArray[i].dataArray[j].title + "<\/a><\/span><br \/>" 

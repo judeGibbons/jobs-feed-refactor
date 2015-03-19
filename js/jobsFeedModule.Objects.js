@@ -10,7 +10,7 @@ jobsFeedModule.Objects = function () {
 		    var items = result.xmlDocument.getElementsByTagName('item');
 
 			//set up objects based on xml items
-			function itemObject(title,link,location,reference,category,salary,minsalary,closingdate,closingdateObject,description) {
+			function itemObject(title,link,location,reference,category,salary,minsalary,closingdate,description) {
 				this.title = title;
 				this.link = link;
 				this.location = location;
@@ -19,7 +19,6 @@ jobsFeedModule.Objects = function () {
 				this.salary = salary;
 				this.minsalary = minsalary;
 				this.closingdate = closingdate;
-				this.closingdateObject = closingdateObject;
 				this.description = description;	
 			};
 				
@@ -75,10 +74,9 @@ jobsFeedModule.Objects = function () {
 				closingdate = checkElementChildren(closingdateElement),
 				description = checkElementChildren(descriptionElement),
 				minsalary = checkElementChildren(minsalaryElement),
-				category = checkElementChildren(categoryElement),
-				closingdateObject;
+				category = checkElementChildren(categoryElement);
 
-				var newItemObject = new itemObject(title,link,location,reference,category,salary,minsalary,closingdate,closingdateObject,description);
+				var newItemObject = new itemObject(title,link,location,reference,category,salary,minsalary,closingdate,description);
 				newItemObjectsArray.push(newItemObject);
 
 			};
