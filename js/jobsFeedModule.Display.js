@@ -2,7 +2,7 @@ var jobsFeedModule = jobsFeedModule || {};
 
 jobsFeedModule.Display = function () {
 
-	this.displaytables = function(newXmlObjectsArray,jsonObject) { 
+	this.displaytables = function(newXmlObjectsArray,jsonObject,stuff) {
 
 		//push the sorted variables from the data arrays into html tables
 		for (var i=0, maxi=jsonObject.length; i<maxi; i++) {
@@ -30,7 +30,7 @@ jobsFeedModule.Display = function () {
 				+ jsonObject[i].dataArray[j].closingdate +"<\/td><\/tr>"
 			};
 			if (dataOutput === "") {
-				jsonObject[i].dataTable+="<p class='standalonepara nojobs'>There are currently no jobs available.<\/p>";
+				jsonObject[i].dataTable+="<p class='standalonepara nojobs'>" + jobsFeedModule.noJobsMessage + "<\/p>";
 			} else {
 				jsonObject[i].dataTable+="<table><thead><tr><th>Job title<\/th><th>Salary<\/th><th>Closing date<\/th><\/tr><\/thead><tbody>" + dataOutput + "<\/tbody><\/table>";
 			};

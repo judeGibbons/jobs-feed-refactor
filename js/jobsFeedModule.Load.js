@@ -50,11 +50,11 @@ var loadjson = function(method, url) {
 };
 
 //import xml and when it's loaded, run the display function
+//variables are stored and edited in jobsFeedModule.Variables.js
 function loadxml() {
-	//var feedurl = "https://staffrecruitment.coventry.ac.uk/RSS/UniversityVacancies.xml";
-	var feedurl = "http://www.cutours.co.uk/staffrecruitment/testrssfeed.xml";
-	var feedlimit = 150; // NUMBER OF JOBS TO DISPLAY IN FEED
-	var jobsfeed = new google.feeds.Feed(feedurl+"?t="+new Date().getTime());
+	var feedurl = jobsFeedModule.feedurlVariable;
+	var feedlimit = jobsFeedModule.feedlimitVariable;
+	var jobsfeed = new google.feeds.Feed(feedurl+jobsFeedModule.removeCacheString);
 	jobsfeed.setResultFormat(google.feeds.Feed.XML_FORMAT);
 	jobsfeed.setNumEntries(feedlimit);
 	jobsfeed.load(displayWhenFeedLoaded);
