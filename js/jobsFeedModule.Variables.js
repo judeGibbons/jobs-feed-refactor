@@ -1,16 +1,24 @@
 var jobsFeedModule = jobsFeedModule || {}; 
 	var variables = function () {
 
-
-		// to remove a line from the code, add two strokes in front of the line
-		// to add a line, remove the two strokes
-		// you must leave one and only one line uncommented in each of the following sections
-		// each line must end with a semicolon
+		//============= INSTRUCTIONS ==============//
+		//
+		// to toggle the variables, remove the live code by adding two strokes in front of the line
+		// AND add in the commented-out line by removing the two strokes in front of the line
+		// you MUST have EXACTLY ONE line uncommented in each of the following sections
+		// each line must end with a semicolon;
+		//
+		// to add a new Centre name or category, edit the xmljobsfeed.json file
+		// you can't add any comments in the json file - if you do, it won't work!
+		// each item in the json is three lines long: each line ends with a comma EXCEPT the last in the item
+		// each item is separated with a comma EXCEPT the last item
+		// to check the formatting of the json file, go here: http://jsonlint.com/ ...
+		// copy the code and paste it into the box and click 'validate'
 
 
 		//========= URL OF THE JOBS FEED =========//
 
-		//this is a test feed I've set up on cutours:
+		//this is a test feed with static data I've set up on cutours
 		//jobsFeedModule.feedurlVariable = "http://www.cutours.co.uk/staffrecruitment/testrssfeed.xml";
 
 		//current url of the live feed:
@@ -35,7 +43,7 @@ var jobsFeedModule = jobsFeedModule || {};
 
 		//====== MAX NUMBER OF JOBS TO LOAD ======//
 
-		//this is the maximum number of jobs to receive from the feed - 150 should cover it!
+		//this is max number of jobs to receive from feed: 150 should cover it BUT if jobs not appearing, check this!
 		jobsFeedModule.feedlimitVariable = 150;
 
 		//========================================//

@@ -19,17 +19,6 @@ jobsFeedModule.Format = function () {
 				return mapDateString[matched];
 			});
 		};
-					
-	//sort on job title (could sort on closing date or salary instead)
-		function sortOnTitle(a,b) {
-			if (a.title < b.title) {
-				return -1;
-			};
-			if (a.title > b.title) {
-				return 1;
-			};
-			return 0;
-		};
 
 		var jobsFeedModuleCreateArrays = new jobsFeedModule.CreateArrays();
 		jobsFeedModuleCreateArrays.parsefeed(newXmlObjectsArray);
