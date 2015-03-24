@@ -1,6 +1,11 @@
 [
     {
     "dataType": "location",
+    "nameId": "cmme",
+    "nameString": "Centre for Manufacturing and Materials Engineering"
+    },
+    {
+    "dataType": "location",
     "nameId": "ctm",
     "nameString": "Centre for Transportation and Mobility"
     },

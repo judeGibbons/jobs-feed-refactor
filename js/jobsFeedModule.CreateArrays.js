@@ -28,8 +28,13 @@ jobsFeedModule.CreateArrays = function () {
 		//filter jobs by category and optionally location, push to corresponding arrays
 		for (var i=0, maxi=newXmlObjectsArray.length; i<maxi; i++) {
 			for (var j=0, maxj=divsOnPageArray.length; j<maxj; j++) {
+
+//jobsFeedModule.publicMethod();
+
 				if (newXmlObjectsArray[i].category == "Research") {
-					if ((divsOnPageArray[j].dataType == "location")&&(newXmlObjectsArray[i].location)&&(newXmlObjectsArray[i].location == divsOnPageArray[j].nameString)) {
+					if (divsOnPageArray[j].nameId == "research") {
+						divsOnPageArray[j].dataArray.push(newXmlObjectsArray[i]);
+					} else if ((divsOnPageArray[j].dataType == "location")&&(newXmlObjectsArray[i].location)&&(newXmlObjectsArray[i].location == divsOnPageArray[j].nameString)) {
 						divsOnPageArray[j].dataArray.push(newXmlObjectsArray[i]);
 					}
 				} else if ((newXmlObjectsArray[i].category == "Additional Research")&&(divsOnPageArray[j].nameId == "additional")) {
@@ -47,7 +52,7 @@ jobsFeedModule.CreateArrays = function () {
 			};
 		};
 
-		//sort function moved from jobsFeedModule.Format.js - can't make it work from there
+		//sort function (belongs with the Format code) 
 		function sortOnTitle(a,b) {
 			if (a.title < b.title) {
 				return -1;
@@ -61,7 +66,6 @@ jobsFeedModule.CreateArrays = function () {
 		for (var j=0, maxj=divsOnPageArray.length; j<maxj; j++) {
 			divsOnPageArray[j].dataArray = divsOnPageArray[j].dataArray.sort(sortOnTitle); //(jobsFeedModule.Format.sortOnTitle(a,b));
 		};
-
 
 		var jobsFeedModuleDisplay = new jobsFeedModule.Display();
 		jobsFeedModuleDisplay.displaytables(newXmlObjectsArray,divsOnPageArray);

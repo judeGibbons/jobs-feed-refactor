@@ -23,7 +23,7 @@ if (window.addEventListener) {
 };
 
 function init(jsonurl) {
-	var jsonurl = "./xmljobsfeed.json";
+	var jsonurl = "./js/jobsFeedModule.json";
 	loadjson("GET", jsonurl);
 	loadxml();
 };

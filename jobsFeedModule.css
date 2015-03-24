@@ -140,28 +140,4 @@ th.sorted {
 .nojobs {
 	font-weight: bold;
 	font-size: 0.9em;
-
-}
-
-
-/* <canvas id="sortingtriangle" width="60" height="26"><div id="sortingtriangleimg"></div></canvas> */
-
-#sortingtriangle {
-	display: block;
-    position: absolute;
-    margin-left: 10px;
-    top: 0px;
-   /* width: 60px;
-    height: 26px;*/
-	z-index: 20;
-}
-
-#sortingtriangleimg {
-	display: block;
-	position: absolute;
-	top: -1.7em;
-	width: 30px;
-	height: 13px;
-	z-index: 20;
-	background-image: url("graphics/menuarrow30x13.png");
 }

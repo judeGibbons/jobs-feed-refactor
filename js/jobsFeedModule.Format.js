@@ -1,4 +1,4 @@
-var jobsFeedModule = jobsFeedModule || {}; 
+var jobsFeedModule = jobsFeedModule || {};
 
 jobsFeedModule.Format = function () {
 
@@ -6,9 +6,8 @@ jobsFeedModule.Format = function () {
 
 		for (var i=0, maxi=newXmlObjectsArray.length; i<maxi; i++) {
 
-			//reformat closingdate - line removed below allows sort on closingdateElement
+			//reformat closingdate - removed closingdateElement line so can't sort on closing date
 			if (newXmlObjectsArray[i].closingdate !== "") {
-				//newXmlObjectsArray[i].closingdateObject = new Date(closingdateElement.childNodes[0].nodeValue); //if I want to sort on closing date
 				newXmlObjectsArray[i].closingdate = newXmlObjectsArray[i].closingdate.replace(" 00:00:00 GMT","").replace(",","");
 			};
 			
@@ -19,6 +18,8 @@ jobsFeedModule.Format = function () {
 				return mapDateString[matched];
 			});
 		};
+
+		//sort code belongs here
 
 		var jobsFeedModuleCreateArrays = new jobsFeedModule.CreateArrays();
 		jobsFeedModuleCreateArrays.parsefeed(newXmlObjectsArray);

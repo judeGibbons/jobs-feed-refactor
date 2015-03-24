@@ -16,6 +16,13 @@ var jobsFeedModule = jobsFeedModule || {};
 		// copy the code and paste it into the box and click 'validate'
 
 
+
+		//Google Feed API's TOS explicitly state that the deprecation policy (which says Google will 
+		//give three years' notice before discontinuing the service) will no longer be applicable from April 20, 2015. 
+		//(i.e., the service may be discontinued at any time, with or without warning, after that date.)
+
+
+
 		//========= URL OF THE JOBS FEED =========//
 
 		//this is a test feed with static data I've set up on cutours
@@ -31,6 +38,10 @@ var jobsFeedModule = jobsFeedModule || {};
 
 		// to FLUSH THE CACHE, switch to the second version, load the webpage and then switch them back again
 		//NEED TO TEST THIS!!!
+		//Of course, this could also introduce the possibility - particularly if your server is slow in returning the feed - 
+		//that the API times out and returns an error about being unable to fetch the feed. 
+		//So you'll want to make sure you have logic to handle that and send the same request a second time if necessary.
+
 
 		//using this forces it to fetch a new version every time the page loads, ie removes Google's caching:
 		jobsFeedModule.removeCacheString = "?t="+new Date().getTime();
