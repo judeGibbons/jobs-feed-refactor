@@ -26,3 +26,10 @@ be switched off at any time, so the next stage of the project is to rewrite
 this code using jQuery, producing a custom version that only loads the code 
 I need. I will avoid a problem with loading xml cross-domain by using server 
 space on the same domain as the jobs database.
+
+The live pages are here (although there may be no jobs available in the database 
+at the time):
+http://www.cutours.co.uk/staffrecruitment/research-research.htm
+http://www.cutours.co.uk/staffrecruitment/research-support.htm
+http://www.cutours.co.uk/staffrecruitment/research-cawr.htm
+[and similar urls which match the other file names]
